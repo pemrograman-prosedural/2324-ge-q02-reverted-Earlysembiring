@@ -93,7 +93,7 @@ int main(int _argc, char **_argv)
                 }
                 if ( strcmp(token, "male") == 0 ) {
                     dorms[totalDorm] = create_dorm(_name, _capacity, GENDER_MALE);
-                    totalDorm++;
+                    totalDorm++; 
                 }
                 else if ( strcmp(token, "female") == 0 ) {
                     dorms[totalDorm] = create_dorm(_name, _capacity, GENDER_FEMALE);
