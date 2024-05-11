@@ -14,7 +14,7 @@ int main(int _argc, char **_argv)
     unsigned short totalDorm;
     unsigned short totalStudent;
     char line[255];
-    char delim[2] = "#";
+    char delim[2] = "#"; 
 
 
     while ( 1 ) {
@@ -97,7 +97,7 @@ int main(int _argc, char **_argv)
                 }
                 else if ( strcmp(token, "female") == 0 ) {
                     dorms[totalDorm] = create_dorm(_name, _capacity, GENDER_FEMALE);
-                    totalDorm++;
+                    tota lDorm++;
                 }
             }
 
