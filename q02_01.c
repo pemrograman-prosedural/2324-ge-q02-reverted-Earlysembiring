@@ -99,7 +99,7 @@ int main(int _argc, char **_argv)
                     dorms[totalDorm] = create_dorm(_name, _capacity, GENDER_FEMALE);
                     totalDorm++;
                 }
-            }
+            } 
 
             else if ( strcmp(token, "assign-student") == 0 ) {
                 token = strtok(NULL, delim); char *_id = token;
