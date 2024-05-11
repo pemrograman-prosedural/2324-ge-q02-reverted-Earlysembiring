@@ -82,7 +82,7 @@ int main(int _argc, char **_argv)
                     students[totalStudent] = create_student(_id, _name, _year, GENDER_FEMALE);
                     totalStudent++;
                 }
-            }
+            } 
 
             else if ( strcmp(token, "dorm-add") == 0 ) {
                 token = strtok(NULL, delim); char *_name = token;
