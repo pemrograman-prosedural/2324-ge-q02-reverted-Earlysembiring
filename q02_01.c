@@ -113,7 +113,7 @@ int main(int _argc, char **_argv)
                 if ( studentIdx>=0 && dormIdx>=0 ) {
                     assign(&students[studentIdx], &dorms[dormIdx]);
                 }
-                printf("---dwa-celk\n");
+                printf("---dwa-celk\n"); 
             } 
 
             else if ( strcmp(token, "move-student") == 0 ) {
