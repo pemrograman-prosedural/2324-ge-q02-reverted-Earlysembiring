@@ -5,7 +5,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "./libs/dorm.h"
-#include "./libs/student.h"
+#include "./libs/student.h" 
 
 int main(int _argc, char **_argv)
 {
@@ -14,7 +14,7 @@ int main(int _argc, char **_argv)
     unsigned short totalDorm;
     unsigned short totalStudent;
     char line[255];
-    char delim[2] = "#"; 
+    char delim[2] = "#";
 
 
     while ( 1 ) {
@@ -97,7 +97,7 @@ int main(int _argc, char **_argv)
                 }
                 else if ( strcmp(token, "female") == 0 ) {
                     dorms[totalDorm] = create_dorm(_name, _capacity, GENDER_FEMALE);
-                    tota lDorm++;
+                    totalDorm++;
                 }
             }
 
@@ -105,15 +105,12 @@ int main(int _argc, char **_argv)
                 token = strtok(NULL, delim); char *_id = token;
                 token = strtok(NULL, delim); char *dorm_name = token;
 
-                printf("----\n");
                 short studentIdx = findStudentIdx(_id, students, totalStudent);
                 short dormIdx = findDormIdx(dorm_name, dorms, totalDorm);
-                printf("%d - %d\n", studentIdx, dormIdx);
 
                 if ( studentIdx>=0 && dormIdx>=0 ) {
                     assign(&students[studentIdx], &dorms[dormIdx]);
                 }
-                printf("---dwa-celk\n"); 
             } 
 
             else if ( strcmp(token, "move-student") == 0 ) {
@@ -154,4 +151,4 @@ int main(int _argc, char **_argv)
     
     
     return 0;
-} 
+}
