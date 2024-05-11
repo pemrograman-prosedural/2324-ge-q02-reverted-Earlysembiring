@@ -5,7 +5,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "./libs/dorm.h"
-#include "./libs/student.h"
+#include "./libs/student.h" 
 
 int main(int _argc, char **_argv)
 {
@@ -99,22 +99,37 @@ int main(int _argc, char **_argv)
                     dorms[totalDorm] = create_dorm(_name, _capacity, GENDER_FEMALE);
                     totalDorm++;
                 }
-            }
+  else if ( strcmp(token, "assign-student") == 0 ) {
+    token = strtok(NULL, delim);
+    if (token == NULL) {
+        printf("Expected student ID, but got NULL\n");
+        return -1; // return error code
+    }
+    char *_id = token;
 
-            else if ( strcmp(token, "assign-student") == 0 ) {
-                token = strtok(NULL, delim); char *_id = token;
-                token = strtok(NULL, delim); char *dorm_name = token;
+    token = strtok(NULL, delim);
+    if (token == NULL) {
+        printf("Expected dorm name, but got NULL\n");
+        return -1; // return error code
+    } 
 
-                printf("----\n");
-                short studentIdx = findStudentIdx(_id, students, totalStudent);
-                short dormIdx = findDormIdx(dorm_name, dorms, totalDorm);
-                printf("%d - %d\n", studentIdx, dormIdx);
+    token = strtok(NULL, delim);
+    if (token == NULL) {
+        printf("Expected dorm name, but got NULL\n"); 
+        return;
+    }
+    char *dorm_name = token;
 
-                if ( studentIdx>=0 && dormIdx>=0 ) {
-                    assign(&students[studentIdx], &dorms[dormIdx]);
-                }
-                printf("---dwa-celk\n");
-            }
+    printf("----\n");
+    short studentIdx = findStudentIdx(_id, students, totalStudent);
+    short dormIdx = findDormIdx(dorm_name, dorms, totalDorm);
+    printf("%d - %d\n", studentIdx, dormIdx);
+
+    if ( studentIdx>=0 && dormIdx>=0 ) {
+        assign(&students[studentIdx], &dorms[dormIdx]);
+    }
+    printf("---dwa-celk\n");
+}
 
             else if ( strcmp(token, "move-student") == 0 ) {
                 token = strtok(NULL, delim); char *_id = token;
